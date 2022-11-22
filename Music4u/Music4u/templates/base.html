@@ -28,14 +28,20 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="/">Home</a>
+                <a class="nav-link active" aria-current="page" href="/">HOME</a>
               </li>
+              {% if user.is_authenticated%}
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/accounts/logout">LOGOUT</a>
+              </li>
+              {%else%}
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="/accounts/login">LOGIN</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="/accounts/register">REGISTER</a>
               </li>
+              {%endif%}
               <li class="nav-item">
                 <a class="nav-link" href="/about">ABOUT US</a>
               </li>
