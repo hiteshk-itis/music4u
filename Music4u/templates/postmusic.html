@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class="container my-4" style="margin-left: 380px;">
+    <form method="post" action="/music/postmusic/" class="mx-1 mx-md-4">
+        {% csrf_token %}
+        <div class="form-group mb-3">
+          <label for="title" class="form-label">Title</label>
+          <input type="text" class="form-control" id="title" name="title" style="width: 500px;">
+        </div>
+
+        <div class="form-group mb-3">
+            <label for="rating" class="form-label">rating</label>
+            <input type="number" class="form-control" id="rating" name="rating" style="width: 500px;">
+        </div>
+        <div class="form-group mb-3">
+            <label for="user_id" class="form-label">User_id</label>
+            <input type="number" class="form-control" id="user_id" name="user_id" aria-describedby="emailHelp" style="width: 500px;">
+        </div>
+        <div class="form-group mb-3">
+            <label for="song_id" class="form-label">Song_id</label>
+            <input type="number" class="form-control" id="song_id" name="song_id" aria-describedby="emailHelp" style="width: 500px;">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+
+{% endblock body %}
+{% block title %}POSTMUSIC{% endblock title %}POSTMUSIC
